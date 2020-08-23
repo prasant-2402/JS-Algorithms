@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<body>
+    <h1>Greatest Common Divisor</h1>
+    <div>
+        <input type="text" id="firstNumber" placeholder="First Number">
+    </div>
+    <div>
+        <input type="text" id="secondNumber" placeholder="Second Number">
+    </div>
+    <div>
+        <button onclick="CalculateGCD()" value="Submit">Submit</button>
+    </div>
+    <script>
+
+        function CalculateGCD() {
+        var firstNumber = document.getElementById("firstNumber").value;
+        var secondNumber = document.getElementById("secondNumber").value;
+
+            var result = FindGCD(firstNumber, secondNumber);
+            alert(result);
+        }
+
+        function FindGCD(first, second) {
+            if (first === 0) {
+                return second;
+            }
+            return FindGCD(second % first, first);
+        }
+    </script>
+</body>
