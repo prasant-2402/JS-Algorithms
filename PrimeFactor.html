@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<body>
+    <link href="styles/appStyle.css" rel="stylesheet">
+    <h1>Prime Factorization</h1>
+    <div class="container">
+        <div class="first">
+            <input type="text" id="maxNumber" placeholder="Enter Number">
+        </div>
+        <div class="button">
+            <button onclick="CalculatePF()" value="Submit">Submit</button>
+        </div>
+    </div>
+    <script>
+        function CalculatePF() {
+            var maxNumber = document.getElementById("maxNumber").value;
+            var primeNumberList = [];
+            PrimeNumberList(2, primeNumberList, maxNumber);
+            alert(primeNumberList);
+        }
+
+        function PrimeNumberList(primeNumber, primeNumberList, maxNumber) {
+            if (primeNumber >= maxNumber) {
+                return;
+            }
+            if (maxNumber % primeNumber !== 0) {
+                primeNumberList.push(primeNumber);
+            }
+            return PrimeNumberList(primeNumber + 1, primeNumberList, maxNumber);
+        }
+    </script>
+</body>

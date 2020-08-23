@@ -2,7 +2,7 @@
 
 <body>
     <link href="styles/appStyle.css" rel="stylesheet">
-    <h1>Greatest Common Divisor</h1>
+    <h1>Least Common Multiple</h1>
     <div class="container">
         <div class="first">
             <input type="text" id="firstNumber" placeholder="First Number">
@@ -11,17 +11,18 @@
             <input type="text" id="secondNumber" placeholder="Second Number">
         </div>
         <div class="button">
-            <button onclick="CalculateGCD()" value="Submit">Submit</button>
+            <button onclick="CalculateLCM()" value="Submit">Submit</button>
         </div>
     </div>
     <script>
 
-        function CalculateGCD() {
+        function CalculateLCM() {
         var firstNumber = document.getElementById("firstNumber").value;
         var secondNumber = document.getElementById("secondNumber").value;
 
             var result = FindGCD(firstNumber, secondNumber);
-            alert(result);
+            var lcm = (firstNumber * secondNumber)/result;
+            alert(lcm);
         }
 
         function FindGCD(first, second) {
